@@ -1,14 +1,36 @@
+// function hasTargetSum(array, target) {
+//   // Write your algorithm here
+
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    const NumberAfterMinus = target - array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === NumberAfterMinus) return true;
+    }
+  }
+
+  return false;
 }
+/*
+  Given an array and a target.
+  Loop through the array, and again nest another array inside of it looping from the element in the second index.
+  If the element in the first index and the second index  add up to our target then return true.
+  Otherwise continue the loop untill you land on the elements that equate to our target.
+
+
 
 /* 
   Write the Big O time complexity of your function here
+  0(n*2)
 */
 
 /* 
   Add your pseudocode here
 */
+/* Loop through the array and nest another loop this time starting from the second element of the same array.
+If the first element of the outer loop compare to the second element of the inner loop by adding to our target number return true
+Otherwise return false till the condition is satisfied
+ */
 
 /*
   Add written explanation of your solution here
